@@ -129,3 +129,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.SessionAuthentication',
     )
 }
+
+DRF_TEST_DOCS_DIR = os.path.join(BASE_DIR, 'test_docs')
+TEST_RUNNER = 'drftest.TestRunner'
