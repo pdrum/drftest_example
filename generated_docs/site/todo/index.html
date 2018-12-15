@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../img/favicon.ico">
+        <title>todo - DRF Tests</title>
+        <link href="../css/bootstrap-custom.min.css" rel="stylesheet">
+        <link href="../css/font-awesome.min.css" rel="stylesheet">
+        <link href="../css/base.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        <script src="../js/jquery-1.10.2.min.js" defer></script>
+        <script src="../js/bootstrap-3.0.3.min.js" defer></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+        <script>hljs.initHighlightingOnLoad();</script> 
+    </head>
+
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+
+                <!-- Collapsed navigation -->
+                <div class="navbar-header">
+                    <!-- Expander button -->
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="..">DRF Tests</a>
+                </div>
+
+                <!-- Expanded navigation -->
+                <div class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li >
+                                <a href="..">Welcome</a>
+                            </li>
+                            <li class="active">
+                                <a href="./">todo</a>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="#" data-toggle="modal" data-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li >
+                                <a rel="next" href="..">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="disabled">
+                                <a rel="prev" >
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+                <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
+    <ul class="nav bs-sidenav">
+        <li class="main active"><a href="#todo">todo</a></li>
+            <li><a href="#createtodoitemtest">CreateToDoItemTest</a></li>
+            <li><a href="#deletetodoitemviewtest">DeleteToDoItemViewTest</a></li>
+            <li><a href="#edittodoitemtest">EditToDoItemTest</a></li>
+    </ul>
+</div></div>
+                <div class="col-md-9" role="main">
+
+<h1 id="todo">todo</h1>
+<p>todo app has the following tests.
+Tests are categorized into classes where each class has
+several test cases.</p>
+<h2 id="createtodoitemtest">CreateToDoItemTest</h2>
+<p>This endpoint creates to-do items</p>
+<p>This class has the following test cases:</p>
+<p><details>
+<summary>&#10004; <strong>test_successful_creation</strong>
+</summary></p>
+<ul>
+<li><strong>URL:</strong> <code>/api//todo-items/</code></li>
+<li><strong>Method:</strong> <code>post</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Headers:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token e2a37bee2f14cc7159c02830ad1dd6c11bd1ca41&quot;
+}
+</code></pre>
+
+<ul>
+<li><strong>Request data:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;is_done&quot;: true,
+    &quot;name&quot;: &quot;First&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Response status code</strong>: 201</p>
+</li>
+<li>
+<p><strong>Response data:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;id&quot;: 1,
+    &quot;is_done&quot;: true,
+    &quot;name&quot;: &quot;First&quot;
+}
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>&#10008; <strong>test_without_name</strong>
+</summary></p>
+<ul>
+<li>
+<p><strong>Description:</strong> 
+        <code>name</code> should be provided in request body.</p>
+</li>
+<li>
+<p><strong>URL:</strong> <code>/api//todo-items/</code></p>
+</li>
+<li><strong>Method:</strong> <code>post</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Headers:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token 46eed6a52e75c5d6dc41f6c9e6fdc513ba9134af&quot;
+}
+</code></pre>
+
+<ul>
+<li><strong>Request data:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;is_done&quot;: true
+}
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Response status code</strong>: 400</p>
+</li>
+<li>
+<p><strong>Response data:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;name&quot;: [
+        &quot;This field is required.&quot;
+    ]
+}
+</code></pre>
+
+<p></details></p>
+<h2 id="deletetodoitemviewtest">DeleteToDoItemViewTest</h2>
+<p>This endpoint deletes to-do items.</p>
+<p>This class has the following test cases:</p>
+<p><details>
+<summary>&#10004; <strong>test_successful_deletion</strong>
+</summary></p>
+<ul>
+<li><strong>URL:</strong> <code>/api//todo-items/1/</code></li>
+<li><strong>Method:</strong> <code>delete</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Path parameters:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;pk&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li><strong>Headers:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token b04b13687fe88ea15a0b1447aaf469ef19797edb&quot;
+}
+</code></pre>
+
+<ul>
+<li><strong>Response status code</strong>: 204</li>
+</ul>
+<p></details></p>
+<p><details>
+<summary>&#10008; <strong>test_when_id_does_not_exist</strong>
+</summary></p>
+<ul>
+<li><strong>URL:</strong> <code>/api//todo-items/34536/</code></li>
+<li><strong>Method:</strong> <code>delete</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Path parameters:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;pk&quot;: 34536
+}
+</code></pre>
+
+<ul>
+<li><strong>Headers:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token 68d9252f8c9d99777109f2d23257e5e47e4ca9bc&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Response status code</strong>: 404</p>
+</li>
+<li>
+<p><strong>Response data:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;detail&quot;: &quot;Not found.&quot;
+}
+</code></pre>
+
+<p></details></p>
+<h2 id="edittodoitemtest">EditToDoItemTest</h2>
+<p>This endpoint edits to-do items.</p>
+<p>This class has the following test cases:</p>
+<p><details>
+<summary>&#10004; <strong>test_successful_edit</strong>
+</summary></p>
+<ul>
+<li><strong>URL:</strong> <code>/api//todo-items/1/</code></li>
+<li><strong>Method:</strong> <code>put</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Path parameters:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;pk&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li><strong>Headers:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token 6c070266b972cc84b720cb7f9129ded465e2e01c&quot;
+}
+</code></pre>
+
+<ul>
+<li><strong>Request data:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;is_done&quot;: true,
+    &quot;name&quot;: &quot;Bar&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Response status code</strong>: 200</p>
+</li>
+<li>
+<p><strong>Response data:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;id&quot;: 1,
+    &quot;is_done&quot;: true,
+    &quot;name&quot;: &quot;Bar&quot;
+}
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>&#10008; <strong>test_when_id_does_not_exist</strong>
+</summary></p>
+<ul>
+<li>
+<p><strong>Description:</strong> 
+        <code>id</code> should correspond to an existing to-do item.</p>
+</li>
+<li>
+<p><strong>URL:</strong> <code>/api//todo-items/53353/</code></p>
+</li>
+<li><strong>Method:</strong> <code>put</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Path parameters:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;pk&quot;: 53353
+}
+</code></pre>
+
+<ul>
+<li><strong>Headers:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token f2a190162facf54ba7d9777828d39325eb0cad09&quot;
+}
+</code></pre>
+
+<ul>
+<li><strong>Request data:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;is_done&quot;: true,
+    &quot;name&quot;: &quot;Bar&quot;
+}
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Response status code</strong>: 404</p>
+</li>
+<li>
+<p><strong>Response data:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;detail&quot;: &quot;Not found.&quot;
+}
+</code></pre>
+
+<p></details></p>
+<p><details>
+<summary>&#10008; <strong>test_when_name_is_missing</strong>
+</summary></p>
+<ul>
+<li>
+<p><strong>Description:</strong> 
+        <code>name</code> should be provided in request body.</p>
+</li>
+<li>
+<p><strong>URL:</strong> <code>/api//todo-items/1/</code></p>
+</li>
+<li><strong>Method:</strong> <code>put</code></li>
+<li>
+<p><strong>Format:</strong> <code>json</code></p>
+</li>
+<li>
+<p><strong>Path parameters:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;pk&quot;: 1
+}
+</code></pre>
+
+<ul>
+<li><strong>Headers:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;AUTHORIZATION&quot;: &quot;Token 40bbb0e94ba5ecff66b42a48a76a88fb5fa1df2e&quot;
+}
+</code></pre>
+
+<ul>
+<li><strong>Request data:</strong> </li>
+</ul>
+<pre><code class="json">{
+    &quot;is_done&quot;: true
+}
+</code></pre>
+
+<ul>
+<li>
+<p><strong>Response status code</strong>: 400</p>
+</li>
+<li>
+<p><strong>Response data:</strong> </p>
+</li>
+</ul>
+<pre><code class="json">{
+    &quot;name&quot;: [
+        &quot;This field is required.&quot;
+    ]
+}
+</code></pre>
+
+<p></details></p></div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script>
+            var base_url = "..",
+                shortcuts = {"search": 83, "next": 78, "help": 191, "previous": 80};
+        </script>
+        <script src="../js/base.js" defer></script>
+        <script src="../search/main.js" defer></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="Search Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Search</h4>
+            </div>
+            <div class="modal-body">
+                <p>
+                    From here you can search these documents. Enter
+                    your search terms below.
+                </p>
+                <form role="form">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="Keyboard Shortcuts Modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                <h4 class="modal-title" id="exampleModalLabel">Keyboard Shortcuts</h4>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
