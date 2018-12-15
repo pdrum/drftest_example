@@ -108,7 +108,7 @@ class EditToDoItemTest(BaseAuthenticatedViewTest):
         self.assertStatus(response, status.HTTP_404_NOT_FOUND)
 
 
-class DeleteToDoItemViewTest(BaseAuthenticatedViewTest):
+class DeleteToDoItemTest(BaseAuthenticatedViewTest):
     """
     This endpoint deletes to-do items.
     """

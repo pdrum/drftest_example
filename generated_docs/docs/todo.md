@@ -34,7 +34,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token e2a37bee2f14cc7159c02830ad1dd6c11bd1ca41"
+    "AUTHORIZATION": "Token 77acec346c95d9b52c6f21ff16a0d4fd0c4b0567"
 }
 ```
 
@@ -83,7 +83,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token 46eed6a52e75c5d6dc41f6c9e6fdc513ba9134af"
+    "AUTHORIZATION": "Token 0d70155b85201c3a93fa17aa3362945d7939b19c"
 }
 ```
 
@@ -114,7 +114,7 @@ This class has the following test cases:
 
 
 
-## DeleteToDoItemViewTest
+## DeleteToDoItemTest
 
 
 
@@ -148,7 +148,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token b04b13687fe88ea15a0b1447aaf469ef19797edb"
+    "AUTHORIZATION": "Token 151d92397ead142c4560e96a973b9b5787944aca"
 }
 ```
 
@@ -183,7 +183,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token 68d9252f8c9d99777109f2d23257e5e47e4ca9bc"
+    "AUTHORIZATION": "Token b17bdfb848c60ad00b193f0639eb4618452ff9c4"
 }
 ```
 
@@ -239,7 +239,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token 6c070266b972cc84b720cb7f9129ded465e2e01c"
+    "AUTHORIZATION": "Token 438e496dc18cb2fd473fc640c019397be4f6b5a7"
 }
 ```
 
@@ -295,7 +295,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token f2a190162facf54ba7d9777828d39325eb0cad09"
+    "AUTHORIZATION": "Token e006764ad2a651414caadada1e5242b185698b60"
 }
 ```
 
@@ -349,7 +349,7 @@ This class has the following test cases:
 * **Headers:** 
 ```json
 {
-    "AUTHORIZATION": "Token 40bbb0e94ba5ecff66b42a48a76a88fb5fa1df2e"
+    "AUTHORIZATION": "Token 494e90b1b1afa7814f799d0bbcb10df9b4ba5f9d"
 }
 ```
 
