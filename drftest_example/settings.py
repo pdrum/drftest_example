@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework.authtoken',
+    'drftest',
     'todo',
 ]
 
@@ -130,5 +131,6 @@ REST_FRAMEWORK = {
     )
 }
 
-DRF_TEST_DOCS_DIR = os.path.join(BASE_DIR, 'test_docs')
+DRF_TEST_DOCS_DIR = os.path.join(BASE_DIR, 'generated_docs')
 TEST_RUNNER = 'drftest.TestRunner'
+DRF_TEST_AUTH_PROVIDER_CLASS = 'token_auth_provider.TokenAuthProvider'
